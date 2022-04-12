@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+	<name>personDetail</name>
+	<displayName>personDetail Magnolia Module</displayName>
+	<description>${project.description}</description>
+	<class>org.personDetail.personDetail</class>
+	<versionHandler>org.personDetail.setup.personDetailVersionHandler</versionHandler>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- For more information on module descriptor configuration options -->
+	<!-- https://documentation.magnolia-cms.com/display/DOCS/XML-based+module+descriptor -->
+
+	<dependencies>
+		<dependency>
+			<name>core</name>
+			<version>*</version>
+		</dependency>
+		<!-- Add other dependencies here, e.g the mte (magnolia templating essentials). 
+			<dependency> <name>mte</name> <version>0.7/*</version> </dependency> -->
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<name>magnolia</name>
+			<workspaces>
+				<workspace>personInfo</workspace>
+			</workspaces>
+			<nodeTypeFile>/mgnl-nodetypes/arishi-nodetypes.xml</nodeTypeFile>
+		</repository>
+	</repositories>
+</module>
