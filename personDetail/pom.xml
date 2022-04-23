@@ -34,26 +34,18 @@
 			<groupId>info.magnolia</groupId>
 			<artifactId>magnolia-core</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- TEST -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-site-plugin</artifactId>
-			<version>3.11.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.doxia/doxia-site-renderer -->
-		<dependency>
-			<groupId>org.apache.maven.doxia</groupId>
-			<artifactId>doxia-site-renderer</artifactId>
-			<version>2.0.0-M2</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -69,15 +61,9 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.7.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M4</version>
+				<version>3.0.0-M6</version>
 			</plugin>
-
 		</plugins>
 
 		<!-- default resources configuration which will filter the module descriptor -->
@@ -98,15 +84,17 @@
 		</resources>
 	</build>
 
+
 	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>3.0.0-M4</version>
+				<version>3.0.0-M6</version>
 			</plugin>
 		</plugins>
 	</reporting>
+
 
 	<repositories>
 		<repository>
