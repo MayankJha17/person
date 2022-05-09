@@ -33,7 +33,11 @@ pipeline {
     post("Post build actions"){
         always{
             echo 'Publishing test reports'
-            junit skipPublishingChecks: true, testResults: '**/personDetail/target/surefire-reports/TEST-*.xml'        }
+            junit skipPublishingChecks: true, testResults: '**/personDetail/target/surefire-reports/TEST-*.xml'    
+            sh ‘ssh nacon@192.168.1.6’
+            sh 'nacon'
+            sh 'ls -l'
+            }
         success{
             echo 'Pipeline is sucessfully executed'
         }
