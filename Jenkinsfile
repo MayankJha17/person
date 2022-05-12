@@ -32,15 +32,8 @@ pipeline {
         } 
         stage("SSH"){
            agent{
-                 def remote = [:]
-                 remote.name = 'nacon'
-                 remote.host = '192.168.29.132'
-                 remote.user = 'nacon'
-                 remote.password = 'nacon'
-                 remote.allowAnyHosts = true
-                 stage('Remote SSH') {
-                 sshCommand remote: remote, command: "ls -lrt"
-                  } 
+                  label 'ssh-agent'
+                } 
              }
         } 
     }
