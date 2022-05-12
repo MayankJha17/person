@@ -31,10 +31,11 @@ pipeline {
             } 
         } 
         stage("SSH"){
-           agent{
-                  label 'ssh-agent'
-                } 
-             }
+           agent{ label 'ssh-agent'}
+           steps{
+                sh 'ls -l'
+              }
+            }
         
     }
     post("Post build actions"){
