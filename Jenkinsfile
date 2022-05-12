@@ -4,6 +4,7 @@ pipeline {
 
        PATH = "/usr/local/maven3/bin:$PATH" 
     } */
+
     tools{
         maven 'maven3'
     }
@@ -30,8 +31,7 @@ pipeline {
             } 
         } 
         stage("SSH"){
-           agent {
-             node {
+           agent{
                  def remote = [:]
                  remote.name = 'nacon'
                  remote.host = '192.168.29.132'
@@ -39,10 +39,9 @@ pipeline {
                  remote.password = 'nacon'
                  remote.allowAnyHosts = true
                  stage('Remote SSH') {
-                 sshCommand remote: remote, command: "ls -l"
-                 }
+                 sshCommand remote: remote, command: "ls -lrt"
+                  } 
              }
-           }
         } 
     }
     post("Post build actions"){
